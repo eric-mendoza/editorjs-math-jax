@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Test of Formula</title>
+
+  <style>
+
+    body, html {
+      margin: 0;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #editorjs {
+      width: 800px;
+      margin-top: 10px;
+    }
+
+  </style>
+</head>
+<body>
+
+<div id="editorjs"></div>
+<div class="ce-example__output">
+  <pre class="ce-example__output-content" id="output"></pre>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+<script src="dist/bundle.js"></script>
+<script>
+  const editor = new EditorJS({
+    autofocus: true,
+    // data: {
+    //   version: '2.18.0',
+    // },
+    placeholder: 'Formula tool test',
+    holder: 'editorjs',
+    tools: {
+      formula: {
+        class: Formula,
+        inlineToolbar: true,
+      },
+    },
+    data : {
+      blocks: [
+
+      ]
+    },
+  })
+</script>
+<p>
+  When \[a \ne 0\], there are two solutions to \[ax^2 + bx + c = 0\] and they are
+  \[x = {-b \pm \sqrt{b^2-4ac} \over 2a}.\]
+</p>
+</body>
+</html>
